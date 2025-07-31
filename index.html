@@ -1,189 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJR Courier Service</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-            color: #000;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJR Courier Service</title>
 
-        .dark-mode {
-            background-color: #333;
-            color: #fff;
-        }
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+    }
 
-        h1 {
-            margin: 0;
-            font-size: 36px;
-        }
+    .card-box {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-
-        .form-container {
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-container input,
-        .form-container select,
-        .form-container textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        .btn {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        footer {
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .toggle-dark-mode {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #007bff;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .toggle-dark-mode:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    footer {
+      background-color: #0d6efd;
+      color: white;
+    }
+  </style>
 </head>
-
 <body>
-    <!-- Dark Mode Toggle -->
-    <button class="toggle-dark-mode" onclick="toggleDarkMode()">🌙</button>
 
-    <!-- Header -->
-    <header>
-        <h1>AJR Courier Service</h1>
-        <p>Your trusted delivery partner</p>
-    </header>
+  <!-- Header -->
+  <header class="bg-primary text-white text-center py-4">
+    <h1 class="text-3xl font-bold">AJR Courier Service</h1>
+    <p>Your trusted delivery partner</p>
+  </header>
 
-    <div class="container">
-        <!-- Booking Form -->
-        <div class="form-container">
-            <h2>Book a Courier</h2>
-            <form id="booking-form">
-                <label for="delivery-type">Delivery Type</label>
-                <select id="delivery-type" name="delivery-type">
-                    <option value="standard">Standard Delivery</option>
-                    <option value="express">Express Delivery</option>
-                    <option value="same-day">Same-Day Delivery</option>
-                </select>
+  <main class="container my-5">
 
-                <label for="pickup-location">Pickup Location</label>
-                <input type="text" id="pickup-location" name="pickup-location" placeholder="Enter pickup location" required>
+    <!-- Booking Section -->
+    <section class="mb-5">
+      <div class="card-box p-4 bg-light">
+        <h2 class="mb-4">Book a Courier</h2>
+        <form>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Delivery Type</label>
+              <select class="form-select">
+                <option>Standard Delivery</option>
+                <option>Express Delivery</option>
+                <option>Same-Day Delivery</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Package Weight (kg)</label>
+              <input type="number" class="form-control" placeholder="Weight" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Pickup Location</label>
+              <input type="text" class="form-control" placeholder="Pickup address" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Delivery Location</label>
+              <input type="text" class="form-control" placeholder="Delivery address" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary mt-4">Book Now</button>
+        </form>
+      </div>
+    </section>
 
-                <label for="delivery-location">Delivery Location</label>
-                <input type="text" id="delivery-location" name="delivery-location" placeholder="Enter delivery location" required>
+    <!-- Payment Section -->
+    <section class="mb-5">
+      <div class="card-box p-4 bg-light">
+        <h2 class="mb-4">Payment</h2>
+        <form>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Cardholder Name</label>
+              <input type="text" class="form-control" placeholder="Full name on card" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Card Number</label>
+              <input type="text" class="form-control" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Expiry Date</label>
+              <input type="text" class="form-control" placeholder="MM/YY" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">CVV</label>
+              <input type="text" class="form-control" placeholder="123" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Amount</label>
+              <input type="number" class="form-control" placeholder="Amount in $" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success mt-4">Pay Now</button>
+        </form>
+      </div>
+    </section>
 
-                <label for="weight">Package Weight (kg)</label>
-                <input type="number" id="weight" name="weight" placeholder="Enter weight" required>
+    <!-- Contact Section -->
+    <section>
+      <div class="card-box p-4 bg-light">
+        <h2 class="mb-4">Contact Us</h2>
+        <form>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4" placeholder="Your message here..." required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-secondary mt-4">Send Message</button>
+        </form>
+      </div>
+    </section>
 
-                <button type="submit" class="btn">Book Now</button>
-            </form>
-        </div>
+  </main>
 
-        <!-- Payment Simulation -->
-        <div class="form-container">
-            <h2>Make Payment</h2>
-            <button class="btn" onclick="makePayment()">Pay Now (Simulated)</button>
-        </div>
+  <!-- Footer -->
+  <footer class="text-center py-3">
+    <p class="mb-0">&copy; 2025 AJR Courier Service. All rights reserved.</p>
+  </footer>
 
-        <!-- Contact Form -->
-        <div class="form-container">
-            <h2>Contact Us</h2>
-            <form id="contact-form">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+  <!-- Bootstrap Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
-
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 AJR Courier Service. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        let isDarkMode = false;
-
-        function toggleDarkMode() {
-            isDarkMode = !isDarkMode;
-            document.body.classList.toggle('dark-mode', isDarkMode);
-            document.querySelector('.toggle-dark-mode').textContent = isDarkMode ? '🌞' : '🌙';
-        }
-
-        // Handle form submissions
-        document.getElementById('booking-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Courier booked successfully!');
-        });
-
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Your message has been sent. We will get back to you soon!');
-        });
-
-        // Simulated payment function
-        function makePayment() {
-            alert('Payment successful! Your courier will be dispatched shortly.');
-        }
-    </script>
 </body>
-
 </html>
